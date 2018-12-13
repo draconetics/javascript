@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <title>Javascript</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    
+</body>
+    
+<script>
+      console.log("Regular expression is an object.");
+
+      const re1 = new RegExp('hey');
+      const re2 = /hey/;
+
+      console.log( re1.test('hey') ); 
+      console.log( re2.test('hey') ); 
+
+        //re2 or re1 exists in ('');
+      console.log( re2.test('heyy') ); //true
+      console.log( re2.test('he') ); //false
+
+      console.log('*******************************');
+      //if you want to match strings that start with 'hey'
+      console.log( /^hey/.test('hey') );
+      console.log( /^hey/.test('bla hey') );
+      console.log( /^hey/.test(' hey') );
+
+      //if you want to match strings that end with 'hey'
+      console.log( /hey$/.test('hey') );
+      console.log( /hey$/.test('bla hey') );
+      console.log( /hey$/.test('hey you') );
+    
+      console.log('*************START WITH AND END WITH******************');
+//Combine those, and match strings that exactly match hey, end just that string:
+
+  console.log( /^hey$/.test('hey') );
+     
+  //To match a string that starts with a substring and ends with another, you can use .*
+    
+    console.log( /^hey.*joe$/.test('hey joe') );
+    console.log( /^hey.*joe$/.test('heyjoe')  );
+    console.log( /^hey.*joe$/.test('hey how are you joe') );
+    console.log( /^hey.*joe$/.test('hey joe!') );
+    
+    console.log('************* MATCH ITEMS IN RANGES ******************');
+    
+    console.log( /[a-z]/ );
+    console.log( /[A-Z]/ );
+    console.log( /[a-c]/ );
+    console.log( /[0-1]/ );
+    //console.log( /[a-D]/ );//Error : invalid regular expression.
+
+    let tmp = '';
+    tmp+=/[a-z]/.test('a') + '\n';  //true
+    tmp+=/[a-z]/.test('1') + '\n';  //❌
+    tmp+=/[a-z]/.test('A') + '\n';  //❌
+
+    tmp+=/[a-c]/.test('d') + '\n';  //❌
+    
+    //a doesnt exist in 'dc'
+    //b doesnt exist in 'dc'
+    //c exists in 'dc'
+    tmp+=/[a-c]/.test('dc') + '\n'; //✅a 
+    console.log(tmp);
+    
+    console.log('************* RANGES CAN BE COMBINED ******************');
+    tmp = '';
+    tmp+=/[A-Za-z0-9]/.test('a') + '\n';  //true
+    tmp+=/[A-Za-z0-9]/.test('0') + '\n';  //true
+    tmp+=/[A-Za-z0-9]/.test('A') + '\n';  //true
+    
+    console.log( tmp );
+    
+    console.log('************* MATCHING A RANGE ITEM MULTIPLE TIMES ******************');
+    
+    tmp = '';
+    tmp+=/^[A-Za-z0-9]/.test('a') + '\n';  //true
+    tmp+=/^[A-Za-z0-9]/.test('0') + '\n';  //true
+    tmp+=/^[A-Za-z0-9]/.test('A') + '\n';  //true
+    
+    tmp+=/[A-Za-z0-9]$/.test('a') + '\n';  //true
+    tmp+=/[A-Za-z0-9]$/.test('0') + '\n';  //true
+    tmp+=/[A-Za-z0-9]$/.test('A') + '\n';  //true
+    
+    tmp+=/[A-Za-z0-9]$/.test('ab') + '\n';  //true
+    tmp+=/[A-Za-z0-9]$/.test('01') + '\n';  //true
+    tmp+=/[A-Za-z0-9]$/.test('A ') + '\n';  //false
+    
+    tmp+=/^[A-Za-z0-9]$/.test('ab') + '\n';  //false
+    tmp+=/^[A-Za-z0-9]$/.test('01') + '\n';  //false
+    tmp+=/^[A-Za-z0-9]$/.test('Ab') + '\n';  //false
+    
+    console.log( tmp );
+    
+    console.log('************* NEGATING THE PATTERN ******************');
+    
+    tmp = '';
+    
+    tmp+=/[^A-Za-z0-9]$/.test('a') + '\n';  //false
+    tmp+=/[^A-Za-z0-9]$/.test('0') + '\n';  //false
+    tmp+=/[^A-Za-z0-9]$/.test('@') + '\n';  //true
+    
+    console.log( tmp );
+    
+    
+</script>
+</html>
