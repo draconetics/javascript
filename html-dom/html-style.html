@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Full Style</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		let main = document.createElement('div');
+		main.id = 'main';
+		
+		main.setAttribute('style','background:#eeeeee; min-height: 200px;text-align:center;');
+
+		let title = document.createElement('h2');
+		title.style.color = '#0000aa';
+
+		let content = document.createTextNode('Welcome to my website.');
+		main.appendChild(title);
+		title.appendChild(content);
+		document.body.appendChild(main);
+
+		//PROVING HTML REMOVE AND REPLACE
+		let message = document.createElement('p');
+		message.appendChild(document.createTextNode('This is the principal content for create a profesional webpage.'));
+		main.appendChild(message);
+
+		setTimeout(function(){ 
+			settingMainMessage();
+		}, 3000);
+
+let settingMainMessage = ()=>{
+	let newTitle = document.createElement('h2');
+	newTitle.appendChild(document.createTextNode('FrontEnd Developer'));
+	newTitle.setAttribute('style','color: #00a0e4');
+	main.replaceChild(newTitle,main.childNodes[0]);
+	main.removeChild(main.childNodes[1]);
+
+	let newMsg = document.createElement('p');
+	newMsg.appendChild(document.createTextNode('Create websites with the most profesional techniques.  Don\'t forget it is extremmly easy.'));
+	main.appendChild(newMsg);
+
+	let image = document.createElement('img');
+	image.src = 'logos.png';
+	image.alt = 'html + css + javascript';
+	image.title = ' html + css + javascript';
+	image.style.margin = '10px';
+
+	main.appendChild(image);
+
+};
+	</script>
+
+</body>
+</html>

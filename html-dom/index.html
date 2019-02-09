@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Samples</title>
+</head>
+<body>
+<h2>My First Page</h2>
+
+<p id="demo">This is a Demo Paragraph</p>
+
+<div class="container">
+	<h3 class="main">This is principal container</h3>
+	<p> This is paragraph inside a container</p>	
+	<form class="form-signin">
+		<input type="text" name="user" placeholder="username"/>
+		<input type="password" name="password" placeholder="password"/>
+		<button class="btn-signin">Login</button>
+	</form>
+</div>
+<div class="menu-box">
+	<li class="menu">
+		<ul class="menu menu-home">Home</ul>
+		<ul class="menu menu-about">About Us</ul>
+		<ul class="menu menu-contact">Contact</ul>
+	</li>
+</div>
+
+<script>
+document.getElementById("demo").innerHTML = "Nike is the most recognized brand in the world";
+
+let para = document.getElementsByTagName("h2");
+console.log(para);
+para[0].innerHTML = "<p><strong>Nike</strong> official Webpage</p>";
+
+let menuHome = document.getElementsByClassName("menu-home")[0];
+menuHome.innerHTML = "Principal";
+
+
+let userInput = document.getElementsByName("user")[0];
+userInput.placeholder = "Nickname or email";
+
+console.log(document.anchors);
+console.log(document.applets);//deprecated
+console.log(document.baseURI);
+console.log('*********** body ***********');
+console.log(document.body);
+console.log(document.body.children[4]);
+console.log(document.getElementsByTagName('script')[0]);
+console.log('*********************');
+console.log('******** cookie ************');
+console.log(document.cookie);
+console.log('*********************');
+console.log(document.DOCTYPE);//undefined
+console.log(document.doctype);
+console.log(document.getElementsByName('html')[0]);//html propertie is not a name.--- output : undefined.
+console.log(document.getElementsByTagName('html')[0]);
+
+
+console.log(document.implementation);
+console.log(document.documentURI);
+
+
+</script>
+</body>
+</html>

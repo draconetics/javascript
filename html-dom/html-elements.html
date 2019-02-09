@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Samples</title>
+	<link rel="stylesheet" type="text/css" href="https://bootswatch.com/_vendor/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+    </ul>
+    <div class="voidDiv"></div>
+  </div>
+</nav>
+
+
+<script>
+//CREATING LOGO
+const navbar = document.getElementsByClassName('navbar')[0];
+const linkAdidas = document.createElement('a');
+//console.log(linkAdidas);
+linkAdidas.className = 'navbar-brand';
+linkAdidas.href = '#';
+linkAdidas.innerHTML = 'Ecommerce';
+//navbar.append(linkAdidas);
+navbar.insertBefore(linkAdidas, navbar.firstChild);
+
+
+//CREATING MENU LIST
+const menuList = ['Features', 'Pricing', 'About'];
+const navbarNav = document.getElementsByClassName('navbar-nav')[0];
+//console.log(navbarNav);
+menuList.map((item)=>{
+	let li = document.createElement('li');
+	li.className = 'nav-item';
+	let a = document.createElement('a');
+	a.className = 'nav-link';
+	a.href = '#';
+	a.innerHTML = item;
+	li.append(a);
+
+	return navbarNav.appendChild(li);
+});
+
+//CREATING A FORM
+const rightSearch = document.getElementsByClassName('collapse')[0];
+const form = document.createElement('form');
+form.className = 'form-inline my-2 my-lg-0';
+const input = document.createElement('input');
+input.className = 'form-control mr-sm-2';
+input.type = 'text';
+input.placeholder = 'Search';
+
+const button = document.createElement('button');
+button.className = 'btn btn-secondary my-2 my-sm-0';
+button.type = 'submit';
+button.appendChild(document.createTextNode('Search'));
+button.setAttribute('class','btn btn-info my-2 my-sm-0');
+
+form.appendChild(input);
+form.appendChild(button);
+
+rightSearch.replaceChild(form, rightSearch.children[1]);
+
+
+/* CHANGING SELECTED ITEM - about as the new selected item */
+let navItemList = document.getElementsByClassName('nav-item');
+navItemList = [...navItemList];
+
+navItemList.map((item)=>{
+  if(item.children[0].childNodes[0].nodeValue === 'About')
+    item.setAttribute('class','nav-item active');
+    //item.className = 'nav-item active';
+  else
+    //item.className = 'nav-item';
+    item.setAttribute('class','nav-item');
+});
+console.log(navItemList);
+
+</script>
+</body>
+</html>
