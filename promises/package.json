@@ -1,0 +1,10 @@
+{
+  "name": "javascript-samples",
+  "version": "1.0",
+  "main": "index.js",
+  "author": "Mario Flores",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.3.0"
+  }
+}

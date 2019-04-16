@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<title>Samples</title>
+	<!--<meta charset="utf-8"/>-->
 </head>
 <body>
 <h2>My First Page</h2>
@@ -29,7 +30,7 @@
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/MB9SHHWEviQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <embed src="https://www.youtube.com/embed/10r9ozshGVE"/>
-<embed src="http://uk3.internet-radio.com:8405/live"/>
+<!--<embed src="http://uk3.internet-radio.com:8405/live"/>-->
 <script>
 document.getElementById("demo").innerHTML = "Nike is the most recognized brand in the world";
 
@@ -73,21 +74,18 @@ console.log(document.domConfig);//undefined
 
 console.log('********* embeds elements *************');
 //play video with video tag is not efective, it cant play on mac browsers.
-let embed = document.createElement('embed');
-embed.src = 'video.mp4'; 
-embed.width = '250';
-embed.height = '200';
-let content = document.getElementById('content');
-content.appendChild(document.createTextNode('new message'));
-content.appendChild(embed);
-
 console.log(document.embeds);
-console.log(document.implementation);
-
 console.log('********* HTMLCollection vs nodeList sample ************');
 console.log(document.querySelectorAll('ul'));
 console.log(document.getElementsByTagName('ul'));
-console.log('***************************************');
+console.log('************** document.implementation *****************');
+console.log(document.implementation);
+console.log(document.inputEncoding);//windows-1252
+console.log(document.lastModified);//02/09/2019 11:34:52
+console.log(document.readyState);
+console.log(document.referrer);//should return wwww.google.com (a url dns)
+console.log(document.strictErrorChecking);
+console.log(document.URL);
 
 </script>
 </body>

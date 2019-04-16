@@ -32,8 +32,9 @@ linkAdidas.className = 'navbar-brand';
 linkAdidas.href = '#';
 linkAdidas.innerHTML = 'Ecommerce';
 //navbar.append(linkAdidas);
-navbar.insertBefore(linkAdidas, navbar.firstChild);
-
+//console.log(navbar);
+navbar.insertBefore(linkAdidas, navbar.firstElementChild);
+console.log(navbar);
 
 //CREATING MENU LIST
 const menuList = ['Features', 'Pricing', 'About'];
